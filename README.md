@@ -1,5 +1,6 @@
 # Grassp Ontology Guide
 
+<!-- prettier-ignore -->
 > [!NOTE]
 > **This is a fork of [chanzuckerberg/cellxgene-ontology-guide](https://github.com/chanzuckerberg/cellxgene-ontology-guide).**
 > It extends the original to support non-animal species (e.g. yeast). All credit for the original work goes to the
@@ -64,4 +65,5 @@ Older version of cellxgene-schema will be fully deprecated after 6 months of the
 2. Leave the older versions in the file for backward compatibility. They will be deprecated and removed automatically after 6 months. That process is handled in [deprecate_previous_cellxgene_schema_versions](https://github.com/chanzuckerberg/cellxgene-ontology/blob/main/tools/ontology-builder/src/all_ontology_generator.py#L311-L311).
 
 # Maintainance
+
 This repository is maintained by the [Computational Biology Platform](https://www.czbiohub.org/comp-biology/) at the [Chan Zuckerberg Biohub San Francisco](https://www.czbiohub.org/sf/)
