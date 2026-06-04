@@ -30,8 +30,13 @@ jobs:
           path: api/python/docs/
 
   # Deploy the artifact to GitHub pages.
+  # Skipped unless the repo opts in by setting the `ENABLE_PAGES` repository
+  # variable to "true" (Settings > Secrets and variables > Actions > Variables).
+  # GitHub Pages is not configured on this fork, so the job is skipped (not
+  # failed) by default.
   deploy:
     needs: build
+    if: ${{ vars.ENABLE_PAGES == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       pages: write
