@@ -3,7 +3,12 @@
 > [!NOTE]
 > **This is a fork of [chanzuckerberg/cellxgene-ontology-guide](https://github.com/chanzuckerberg/cellxgene-ontology-guide).**
 > It extends the original to support non-animal species (e.g. yeast). All credit for the original work goes to the
-> [Chan Zuckerberg Initiative](https://chanzuckerberg.com/) and the upstream contributors. 
+> [Chan Zuckerberg Initiative](https://chanzuckerberg.com/) and the upstream contributors.
+>
+> **Fork point:** forked from upstream commit
+> [`a376853`](https://github.com/chanzuckerberg/cellxgene-ontology-guide/commit/a376853aa2e0689e313c7fb1538ab256803b910f)
+> on 2025-10-21, corresponding to upstream version **1.9.0**.
+> Upstream has continued to evolve since then.
 
 CellxGene Ontology Guide is a filtered and curated collection of ontological metadata from different public sources.
 The primary goal is to serve the ontology needs of the [CellxGene](https://cellxgene.cziscience.com/) project and its
