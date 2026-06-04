@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/all_ontology_generator.py
+src/descendent_mapping_generator.py
+src/docker_config.py
+src/env.py
+src/validate_json_schemas.py
+src/raw_files.egg-info/PKG-INFO
+src/raw_files.egg-info/SOURCES.txt
+src/raw_files.egg-info/dependency_links.txt
+src/raw_files.egg-info/top_level.txt
+tests/test_all_ontology_generator.py
+tests/test_descendant_mapping_generator.py
+tests/test_docker_config.py
+tests/test_validate_json_schemas.py

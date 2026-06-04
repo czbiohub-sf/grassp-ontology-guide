@@ -405,9 +405,10 @@ def _extract_ontology_term_metadata(
         # Gets ancestors
         ancestors = _get_ancestors(onto_term, allowed_ontologies)
 
-        # Special Case: skip the current term if it is an NCBI Term, but not a descendant of 'NCBITaxon:33208' (Animal)
-        if onto.name == "NCBITaxon" and "NCBITaxon:33208" not in ancestors:
-            continue
+        # Note: Previously filtered to only descendants of NCBITaxon:33208 (Animals)
+        # Constraint removed to support all organisms (fungi, plants, bacteria, etc.)
+        # This enables support for proteomics datasets with non-animal organisms like
+        # yeast (NCBITaxon:4932) and other fungi, bacteria, and plants
 
         term_dict[term_id] = dict()
         term_dict[term_id]["ancestors"] = ancestors
