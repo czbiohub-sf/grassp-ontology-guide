@@ -1,0 +1,52 @@
+name: publish-wheel
+
+# Builds the Python package (bundling the ontology assets via `make build`)
+# and attaches the wheel + sdist to a GitHub Release. Trigger by pushing a
+# version tag, e.g.:
+#
+#   git tag v1.9.0
+#   git push origin v1.9.0
+#
+# or run manually from the Actions tab (workflow_dispatch) against a tag.
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write # required to create/update the GitHub Release
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build wheel + sdist (bundles ontology assets)
+        run: make build -C api/python
+
+      - name: Publish artifacts to GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$TAG" \
+            api/python/dist/*.whl \
+            api/python/dist/*.tar.gz \
+            --title "$TAG" \
+            --generate-notes \
+            --verify-tag \
+          || gh release upload "$TAG" \
+            api/python/dist/*.whl \
+            api/python/dist/*.tar.gz \
+            --clobber

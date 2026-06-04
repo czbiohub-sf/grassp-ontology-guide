@@ -14,6 +14,30 @@ CellxGene Ontology Guide is a filtered and curated collection of ontological met
 The primary goal is to serve the ontology needs of the [CellxGene](https://cellxgene.cziscience.com/) project and its
 associated tools. An [API](./api/python) for querying the data is also provided.
 
+# Installation
+
+The Python package is not published to PyPI. Pre-built wheels are attached to each
+[GitHub Release](https://github.com/czbiohub-sf/grassp-ontology-guide/releases); the wheel bundles the ontology assets,
+so no extra download is needed. Install it with `pip` by pointing at the wheel URL for the release you want:
+
+```bash
+pip install https://github.com/czbiohub-sf/grassp-ontology-guide/releases/download/v1.9.0/cellxgene_ontology_guide-1.9.0-py3-none-any.whl
+```
+
+Replace `v1.9.0` (the release tag) and the version in the wheel filename to install a different release. The wheel is
+pure Python (`py3-none-any`), so the same file works on all platforms.
+
+> [!NOTE]
+> Installing straight from source (`pip install` of the repo or `git+https://…`) will **not** work: the ontology assets
+> and `LICENSE` are assembled into the package at build time by `make build`, so only the released wheel contains them.
+> If you are working from a clone, run `make install -C api/python` instead.
+
+The package is imported as `cellxgene_ontology_guide`:
+
+```python
+from cellxgene_ontology_guide.ontology_parser import OntologyParser
+```
+
 # Components
 
 ## Ontology Assets
