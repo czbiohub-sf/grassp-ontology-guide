@@ -33,3 +33,6 @@ Older version of cellxgene-schema will be fully deprecated after 6 months of the
 
 1. Update the [ontology_info.json](./ontology-assets/ontology_info.json) file with the new schema version
 2. Leave the older versions in the file for backward compatibility. They will be deprecated and removed automatically after 6 months. That process is handled in [deprecate_previous_cellxgene_schema_versions](https://github.com/chanzuckerberg/cellxgene-ontology/blob/main/tools/ontology-builder/src/all_ontology_generator.py#L311-L311).
+
+# Maintainance
+This repository is maintained by the [Computational Biology Platform](https://www.czbiohub.org/comp-biology/) at the [Chan Zuckerberg Biohub San Francisco](https://www.czbiohub.org/sf/)
