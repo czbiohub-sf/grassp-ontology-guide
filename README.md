@@ -11,6 +11,8 @@
 > on 2025-10-21, corresponding to upstream version **1.9.0**.
 > Upstream has continued to evolve since then.
 
+This fork supports dataset validation for [grassp](https://github.com/czbiohub-sf/grassp) generated anndata objects with the [subcellular-proteomics-curation](https://github.com/czbiohub-sf/subcellular-proteomics-curation) repository.
+
 CellxGene Ontology Guide is a filtered and curated collection of ontological metadata from different public sources.
 The primary goal is to serve the ontology needs of the [CellxGene](https://cellxgene.cziscience.com/) project and its
 associated tools. An [API](./api/python) for querying the data is also provided.
